@@ -4,28 +4,27 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>Interactive Analytics Dashboard</h2>
-    <span class="badge bg-primary fs-6">Tableau Integration</span>
+    <h2 class="fw-bold text-primary"><i class="fa-solid fa-chart-line me-2"></i>Interactive Health Analytics Dashboard</h2>
+    <span class="badge bg-primary fs-6 px-3 py-2">Tableau Live Feed</span>
 </div>
 
-<!-- Embedded Tableau Dashboard Container -->
-<div class="card border-0 shadow-sm p-3 mb-4 bg-white">
-    <div class="tableauPlaceholder" id="tableauVizContainer" style="width: 100%; height: 700px; position: relative;">
-        <!-- Replace the src URL below with your exact Tableau Public Embed URL -->
+<!-- Tableau Embedded Dashboard Container -->
+<div class="card border-0 shadow-sm p-3 mb-4 bg-white rounded-3">
+    <div class="tableauPlaceholder" id="tableauVizContainer" style="width: 100%; height: 750px; position: relative;">
         <iframe 
-            src="https://public.tableau.com/views/Health360/Dashboard1?:embed=y&:showVizHome=n&:apiJS=true" 
+            src="{{ tableau_url }}" 
             width="100%" 
             height="100%" 
-            style="border: none;"
+            style="border: none; border-radius: 8px;"
             allowfullscreen>
         </iframe>
     </div>
 </div>
 
-<div class="alert alert-info d-flex align-items-center" role="alert">
-    <i class="fa-solid fa-circle-info fa-lg me-3"></i>
+<div class="alert alert-light border d-flex align-items-center shadow-sm" role="alert">
+    <i class="fa-solid fa-circle-info fa-lg text-primary me-3"></i>
     <div>
-        <strong>Dashboard Navigation:</strong> Use the filters within the Tableau dashboard above to inspect clinical variables such as smoking habits, alcohol consumption, glucose levels, and age segments.
+        <strong>Dashboard Navigation:</strong> Filter patient populations across demographics (age, gender), health measurements (BMI, blood pressure, cholesterol, glucose), and lifestyle behavioral indicators (smoking, alcohol, exercise level).
     </div>
 </div>
 {% endblock %}
