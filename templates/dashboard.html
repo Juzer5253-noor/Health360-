@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="margin-bottom: 1.5rem;">
+    <h2>Health360 Metrics Dashboard</h2>
+    <p>Interactive overview of exotic botanical therapies and global health impacts.</p>
+</div>
+<div class="tableau-container">
+    <tableau-viz id="tableauViz" src="{{ viz_url }}" toolbar="bottom" hide-tabs></tableau-viz>
+</div>
+{% endblock %}

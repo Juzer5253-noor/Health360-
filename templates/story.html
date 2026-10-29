@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="margin-bottom: 1.5rem;">
+    <h2>The Health360 Journey</h2>
+    <p>A sequential data narrative exploring the path to holistic healing.</p>
+</div>
+<div class="tableau-container">
+    <tableau-viz id="tableauStory" src="{{ viz_url }}" toolbar="bottom"></tableau-viz>
+</div>
+{% endblock %}
