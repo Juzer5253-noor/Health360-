@@ -1,10 +1,33 @@
 {% extends "base.html" %}
+
+{% block title %}Health360 — Patient Risk Story{% endblock %}
+
 {% block content %}
-<div style="margin-bottom: 1.5rem;">
-    <h2>The Health360 Journey</h2>
-    <p>A sequential data narrative exploring the path to holistic healing.</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Guided Insights Story</h2>
+    <span class="badge bg-success fs-6">Story Mode</span>
 </div>
-<div class="tableau-container">
-    <tableau-viz id="tableauStory" src="{{ viz_url }}" toolbar="bottom"></tableau-viz>
+
+<!-- Embedded Tableau Story Container -->
+<div class="card border-0 shadow-sm p-3 mb-4 bg-white">
+    <div class="tableauPlaceholder" id="tableauStoryContainer" style="width: 100%; height: 750px; position: relative;">
+        <!-- Replace the src URL below with your exact Tableau Story Embed URL -->
+        <iframe 
+            src="https://public.tableau.com/views/Health360/Story1?:embed=y&:showVizHome=n&:apiJS=true" 
+            width="100%" 
+            height="100%" 
+            style="border: none;"
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm p-4">
+    <h4>Key Takeaways from the Story</h4>
+    <ul>
+        <li><strong>High-Risk Indicators:</strong> Combination of elevated BMI, smoking habits, and high cholesterol significantly increases chronic disease likelihood.</li>
+        <li><strong>Age Group Vulnerability:</strong> Higher prevalence of heart disease and stroke observed in older demographic bands.</li>
+        <li><strong>Preventive Care Opportunities:</strong> Lifestyle modifications in physical activity and alcohol moderation strongly correlate with lower risk scores.</li>
+    </ul>
 </div>
 {% endblock %}
