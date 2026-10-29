@@ -4,30 +4,29 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>Guided Insights Story</h2>
-    <span class="badge bg-success fs-6">Story Mode</span>
+    <h2 class="fw-bold text-success"><i class="fa-solid fa-book-open me-2"></i>Patient Health & Risk Insights Story</h2>
+    <span class="badge bg-success fs-6 px-3 py-2">Story Mode</span>
 </div>
 
-<!-- Embedded Tableau Story Container -->
-<div class="card border-0 shadow-sm p-3 mb-4 bg-white">
-    <div class="tableauPlaceholder" id="tableauStoryContainer" style="width: 100%; height: 750px; position: relative;">
-        <!-- Replace the src URL below with your exact Tableau Story Embed URL -->
+<!-- Tableau Embedded Story Container -->
+<div class="card border-0 shadow-sm p-3 mb-4 bg-white rounded-3">
+    <div class="tableauPlaceholder" id="tableauStoryContainer" style="width: 100%; height: 780px; position: relative;">
         <iframe 
-            src="https://public.tableau.com/views/Health360/Story1?:embed=y&:showVizHome=n&:apiJS=true" 
+            src="{{ tableau_url }}" 
             width="100%" 
             height="100%" 
-            style="border: none;"
+            style="border: none; border-radius: 8px;"
             allowfullscreen>
         </iframe>
     </div>
 </div>
 
-<div class="card border-0 shadow-sm p-4">
-    <h4>Key Takeaways from the Story</h4>
-    <ul>
-        <li><strong>High-Risk Indicators:</strong> Combination of elevated BMI, smoking habits, and high cholesterol significantly increases chronic disease likelihood.</li>
-        <li><strong>Age Group Vulnerability:</strong> Higher prevalence of heart disease and stroke observed in older demographic bands.</li>
-        <li><strong>Preventive Care Opportunities:</strong> Lifestyle modifications in physical activity and alcohol moderation strongly correlate with lower risk scores.</li>
+<div class="card border-0 shadow-sm p-4 bg-white rounded-3">
+    <h4 class="fw-bold text-dark mb-3"><i class="fa-solid fa-lightbulb text-warning me-2"></i>Key Analytical Takeaways</h4>
+    <ul class="mb-0">
+        <li class="mb-2"><strong>High-Risk Clusters:</strong> Elevated BMI combined with smoking and high blood pressure/glucose significantly increases early chronic disease risk.</li>
+        <li class="mb-2"><strong>Age Group Trends:</strong> Vulnerability to heart disease, stroke, and diabetes rises markedly across older demographic cohorts.</li>
+        <li><strong>Preventive Action:</strong> Lifestyle indicators such as routine exercise and moderated alcohol consumption consistently correlate with lower health risk scores.</li>
     </ul>
 </div>
 {% endblock %}
