@@ -1,10 +1,31 @@
 {% extends "base.html" %}
+
+{% block title %}Health360 — Analytics Dashboard{% endblock %}
+
 {% block content %}
-<div style="margin-bottom: 1.5rem;">
-    <h2>Health360 Metrics Dashboard</h2>
-    <p>Interactive overview of exotic botanical therapies and global health impacts.</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Interactive Analytics Dashboard</h2>
+    <span class="badge bg-primary fs-6">Tableau Integration</span>
 </div>
-<div class="tableau-container">
-    <tableau-viz id="tableauViz" src="{{ viz_url }}" toolbar="bottom" hide-tabs></tableau-viz>
+
+<!-- Embedded Tableau Dashboard Container -->
+<div class="card border-0 shadow-sm p-3 mb-4 bg-white">
+    <div class="tableauPlaceholder" id="tableauVizContainer" style="width: 100%; height: 700px; position: relative;">
+        <!-- Replace the src URL below with your exact Tableau Public Embed URL -->
+        <iframe 
+            src="https://public.tableau.com/views/Health360/Dashboard1?:embed=y&:showVizHome=n&:apiJS=true" 
+            width="100%" 
+            height="100%" 
+            style="border: none;"
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<div class="alert alert-info d-flex align-items-center" role="alert">
+    <i class="fa-solid fa-circle-info fa-lg me-3"></i>
+    <div>
+        <strong>Dashboard Navigation:</strong> Use the filters within the Tableau dashboard above to inspect clinical variables such as smoking habits, alcohol consumption, glucose levels, and age segments.
+    </div>
 </div>
 {% endblock %}
